@@ -106,6 +106,7 @@ export default class App extends React.Component {
           subTotal: totalExpense,
           totalExpense: totalExpense * 0.08 + totalExpense,
         },
+        date: new Date().toDateString().replace(/ /g, "-"),
       },
     };
     const headers = {
@@ -235,7 +236,7 @@ export default class App extends React.Component {
         ) : (
           <div className="recipient-wrapper">
             <div className="inp-wrapper">
-              <input id="Recipient" placeholder="Add Recipient" />
+              <input id="Recipient" placeholder="Email Address" />
               <input id="Name" placeholder="first and last name" />
               <input id="Billing-Address" placeholder="address" />
             </div>

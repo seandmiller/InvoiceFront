@@ -8,13 +8,13 @@ const Clientpayment = () => {
   const params = useParams();
 
   const obj = JSON.parse(params.data);
+  console.log(obj);
   obj.pageData.recipientData.name = obj.pageData.recipientData.name.replace(
     /_/g,
     " "
   );
   obj.pageData.recipientData.billing =
     obj.pageData.recipientData.billing.replace(/_/g, " ");
-  const date = new Date();
 
   const renderMaterials = () => {
     const materials = obj.pageData.services.map((item, index) => {
@@ -39,7 +39,7 @@ const Clientpayment = () => {
             <div className="invoice-detail">
               <div className="invoice-date">
                 <h4>Invoice Date </h4>
-                <p>{date.toDateString()}</p>
+                <p>{obj.pageData.date}</p>
               </div>
               <div className="from-info-pay">
                 <h4>Invoice From</h4>
