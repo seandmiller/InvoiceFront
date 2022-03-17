@@ -1,0 +1,101 @@
+.material-cost {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.material-cost input {
+  height: 60%;
+  outline: none;
+  border: 0px;
+  border-bottom: solid 1px black;
+  font-size: larger;
+  width: 100%;
+}
+.add-expense-btn {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.invoice-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.reciept-for-mats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 15px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.recipient-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  margin-top: 24px;
+  align-items: center;
+}
+.mistake-btn button {
+  height: 50%;
+}
+
+.recipient-wrapper input {
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+}
+
+.recipient-wrapper button {
+  border-radius: 0px;
+  background-color: white;
+  border-top: 3px solid lightgray;
+  border-bottom: 3px solid lightgray;
+}
+
+.qty-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  align-items: center;
+}
+
+.service-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  animation: fade 3.5s ease-in-out forwards;
+}
+
+.from-info {
+  display: flex;
+  justify-content: space-between;
+  width: 98%;
+  animation: fade 2s ease-in-out forwards;
+  border-radius: 20px;
+  white-space: nowrap;
+  padding: 10px;
+  font-size: 60%;
+  height: 85%;
+}
+.invoice-date {
+  white-space: nowrap;
+  animation: fade 3s ease-in-out forwards;
+}
+
+.send-wrapper {
+  margin-top: 40px;
+}
+
+.inp-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.recipient-wrapper div p {
+  white-space: nowrap;
+  overflow: hidden;
+}

@@ -1,0 +1,55 @@
+@keyframes fade {
+  from {
+    opacity: 0%;
+    transform: translateY(5%);
+  }
+  to {
+    opacity: 100%;
+    transform: translateY(0%);
+  }
+}
+
+.client-pay-service-wrapper {
+  animation: fade 2s ease-in-out forwards;
+  font-weight: 600;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+}
+
+.client-pay-app {
+  background-color: white;
+  padding: 5%;
+  width: 90%;
+  border-radius: 20px;
+}
+
+.client-pay-body {
+  width: 100%;
+  animation: fade 0.5s ease-in-out forwards;
+}
+
+.invoice-to {
+  background-color: white;
+  margin-top: 15px;
+  border-radius: 20px;
+  padding: 10px;
+  animation: fade 2.7s ease-in-out forwards;
+}
+
+.from-data-pay {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  font-size: 70%;
+}
+
+.from-info-pay h4 {
+  margin-right: 5px;
+}
+
+.invoice-to-info {
+  display: flex;
+  justify-content: space-between;
+}
