@@ -57,7 +57,7 @@ export default class App extends React.Component {
     const materials = this.state.serviceToPurchase.map((item, index) => {
       return (
         <div key={index} className="reciept-for-mats">
-          <div>{item.service}</div> <div>{item.price}$ </div>
+          <div>{item.service.replace(/_/g, " ")}</div> <div>{item.price}$ </div>
           <div>{item.qty}</div>
         </div>
       );
@@ -66,10 +66,15 @@ export default class App extends React.Component {
   };
 
   addMatItems = () => {
+    let thePrice = parseInt(this.state.price);
+
+    if (isNaN(thePrice)) {
+      thePrice = 0;
+    }
     this.setState({
       serviceToPurchase: this.state.serviceToPurchase.concat({
-        service: this.state.service,
-        price: parseInt(this.state.price),
+        service: this.state.service.replace(/ /g, "_"),
+        price: thePrice,
         qty: this.state.quantity,
       }),
       service: "",
