@@ -58,7 +58,22 @@ export default class App extends React.Component {
       return (
         <div key={index} className="reciept-for-mats">
           <div>{item.service.replace(/_/g, " ")}</div> <div>{item.price}$ </div>
-          <div>{item.qty}</div>
+          <div>{item.qty}</div>{" "}
+          <button
+            style={{
+              backgroundColor: "transparent",
+              color: "rgba(62, 111, 245, 0.938)",
+              fontSize: "150%",
+            }}
+            onClick={(index) => {
+              this.state.serviceToPurchase.pop(index);
+              this.setState({
+                serviceToPurchase: this.state.serviceToPurchase,
+              });
+            }}
+          >
+            <FontAwesomeIcon icon="trash" />
+          </button>
         </div>
       );
     });
