@@ -11,7 +11,7 @@ export default class App extends React.Component {
       recipient: "",
       quantity: 1,
       date: new Date(),
-      btnText: "Send Email",
+      err: false,
     };
 
     this.makePayment = this.makePayment.bind(this);
@@ -114,7 +114,6 @@ export default class App extends React.Component {
   };
 
   handleEmail = () => {
-    console.log("running");
     let totalExpense = this.subTotal();
     const mailBody = {
       mailTo: this.state.recipient["email"],
@@ -132,17 +131,18 @@ export default class App extends React.Component {
     const headers = {
       "Content-Type": "application/json",
     };
-    fetch("http://localhost:8282/send_mail", {
+    fetch("https://invoiceappnodejs.herokuapp.com/send_mail", {
       method: "POST",
       headers,
       body: JSON.stringify({ mailBody }),
     })
       .then((response) => {
-        this.setState({
-          btnText: "Email Sent",
-        });
+        console.log(response);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        this.setState({ err: true });
+      });
   };
 
   render() {
@@ -264,7 +264,9 @@ export default class App extends React.Component {
           </div>
         )}
         <div className="send-wrapper">
-          <button onClick={this.handleEmail}>{this.state.btnText}</button>
+          <button onClick={this.handleEmail}>Send Email</button>
+
+          <div> {this.state.err ? <div>An Error </div> : null} </div>
         </div>
       </div>
     );

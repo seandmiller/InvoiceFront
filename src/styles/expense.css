@@ -1,3 +1,14 @@
 .expense-wrapper {
   margin-top: 50px;
 }
+
+.reciept-for-mats-pay {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.reciept-for-mats-pay div {
+  align-items: center;
+  text-align: center;
+  margin-top: 6%;
+}

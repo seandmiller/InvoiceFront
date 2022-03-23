@@ -21,6 +21,8 @@
 .client-pay-app {
   background-color: white;
   padding: 5%;
+  padding-right: 15%;
+  padding-left: 15%;
   width: 90%;
   border-radius: 20px;
 }
@@ -34,7 +36,8 @@
   background-color: white;
   margin-top: 15px;
   border-radius: 20px;
-  padding: 10px;
+  padding: 5%;
+  width: 110%;
   animation: fade 2.7s ease-in-out forwards;
 }
 

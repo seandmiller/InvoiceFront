@@ -19,7 +19,7 @@ const Clientpayment = () => {
   const renderMaterials = () => {
     const materials = obj.pageData.services.map((item, index) => {
       return (
-        <div key={index} className="reciept-for-mats">
+        <div key={index} className="reciept-for-mats-pay">
           <div>{item.service}</div> <div>{item.price}$ </div>
           <div>{item.qty}</div>
         </div>
