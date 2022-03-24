@@ -13,6 +13,9 @@
   width: 100%;
   border-radius: 0px;
 }
+.material-cost input::-webkit-input-placeholder {
+  font-size: 5%;
+}
 .add-expense-btn {
   display: flex;
   justify-content: center;
