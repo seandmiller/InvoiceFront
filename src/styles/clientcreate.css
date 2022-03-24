@@ -1,7 +1,7 @@
 .material-cost {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 10%;
 }
 
 .material-cost input {
@@ -11,6 +11,7 @@
   border-bottom: solid 1px black;
   font-size: larger;
   width: 100%;
+  border-radius: 0px;
 }
 .add-expense-btn {
   display: flex;
