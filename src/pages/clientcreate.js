@@ -131,7 +131,8 @@ export default class App extends React.Component {
     const headers = {
       "Content-Type": "application/json",
     };
-    fetch("https://invoiceappnodejs.herokuapp.com/send_mail", {
+    //"https://invoiceappnodejs.herokuapp.com/send_mail"
+    fetch("http://localhost:8282/send_mail", {
       method: "POST",
       headers,
       body: JSON.stringify({ mailBody }),
