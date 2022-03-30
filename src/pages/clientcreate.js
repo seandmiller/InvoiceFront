@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import axios from "axios";
 
 export default class App extends React.Component {
   constructor() {
@@ -14,7 +15,6 @@ export default class App extends React.Component {
       err: false,
     };
 
-    this.makePayment = this.makePayment.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.renderMaterials = this.renderMaterials.bind(this);
     this.addMatItems = this.addMatItems.bind(this);
@@ -33,24 +33,6 @@ export default class App extends React.Component {
     this.setState({
       [e.target.name]: e.target.value,
     });
-  };
-
-  makePayment = (token) => {
-    const apiProducts = this.state.products;
-    const headers = {
-      "Content-Type": "application/json",
-    };
-    return fetch("http://localhost:8282/payment", {
-      method: "POST",
-      headers,
-      body: JSON.stringify({ token, apiProducts }),
-    })
-      .then((response) => {
-        console.log(response);
-        var { status } = response;
-        console.log(status);
-      })
-      .catch((err) => console.log(err));
   };
 
   renderMaterials = () => {
@@ -132,11 +114,8 @@ export default class App extends React.Component {
       "Content-Type": "application/json",
     };
     //"https://invoiceappnodejs.herokuapp.com/send_mail"
-    fetch("http://localhost:8282/send_mail", {
-      method: "POST",
-      headers,
-      body: JSON.stringify({ mailBody }),
-    })
+    axios
+      .post("https://invoiceappnodejs.herokuapp.com/send_mail")
       .then((response) => {
         console.log(response);
       })
