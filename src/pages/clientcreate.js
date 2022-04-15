@@ -115,7 +115,7 @@ export default class App extends React.Component {
     };
     //"https://invoiceappnodejs.herokuapp.com/send_mail"
     axios
-      .post("https://odain-invoice.herokuapp.com/send_mail")
+      .post("https://invoiceappnodejs.herokuapp.com/send_mail")
       .then((response) => {
         console.log(response);
       })
