@@ -94,6 +94,7 @@ export default class App extends React.Component {
       recipient: reciObj,
     });
   };
+  //k
 
   handleEmail = () => {
     let totalExpense = this.subTotal();
