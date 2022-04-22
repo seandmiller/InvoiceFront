@@ -114,6 +114,17 @@ export default class App extends React.Component {
       "Content-Type": "application/json",
     };
     //"https://invoiceappnodejs.herokuapp.com/send_mail"
+    // fetch("http://localhost:8282/send_mail", {
+    //   method: "POST", // *GET, POST, PUT, DELETE, etc.
+    //   mode: "no-cors",
+    //   cache: "no-cache",
+    //   credentials: "same-origin", //
+    //   headers: {
+    //     Accept: "application/json",
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(mailBody),
+    // })
     axios
       .post("https://invoiceappnodejs.herokuapp.com/send_mail", mailBody)
       .then((response) => {
@@ -245,8 +256,6 @@ export default class App extends React.Component {
         )}
         <div className="send-wrapper">
           <button onClick={this.handleEmail}>Send Email</button>
-
-          <div> {this.state.err ? <div>An Error </div> : null} </div>
         </div>
       </div>
     );
