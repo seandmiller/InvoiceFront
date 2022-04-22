@@ -103,9 +103,9 @@ export default class App extends React.Component {
         recipientData: this.state.recipient,
         services: this.state.serviceToPurchase,
         total: {
-          tax: totalExpense * 0.08,
-          subTotal: totalExpense,
-          totalExpense: totalExpense * 0.08 + totalExpense,
+          tax: (totalExpense * 0.08).toFixed(2),
+          subTotal: totalExpense.toFixed(2),
+          totalExpense: (totalExpense * 0.08 + totalExpense).toFixed(2),
         },
         date: new Date().toDateString().replace(/ /g, "-"),
       },
@@ -212,8 +212,8 @@ export default class App extends React.Component {
             </div>
             <div className="expense-wrapper">
               {this.renderMaterials()} <h5> Subtotal {totalExpense}$ </h5>
-              <h5>Tax 8% {totalExpense * 0.08}$ </h5>
-              <h4>Total {totalExpense * 0.08 + totalExpense}$ </h4>
+              <h5>Tax 8% {(totalExpense * 0.08).toFixed(2)}$ </h5>
+              <h4>Total {(totalExpense * 0.08 + totalExpense).toFixed(2)}$ </h4>
             </div>
 
             <div className="add-expense-btn">
