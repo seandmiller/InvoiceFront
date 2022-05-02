@@ -140,7 +140,7 @@ export default class App extends React.Component {
     let totalExpense = this.subTotal();
     return (
       <div className="App">
-        <h1>O Miller Wielding</h1>
+        <h1>O Miller Welding</h1>
 
         <h2>Invoice Details</h2>
         <div className="invoice-details">
@@ -153,7 +153,7 @@ export default class App extends React.Component {
               <h4>Invoice From</h4>
               <div className="from-data">
                 <p>
-                  <FontAwesomeIcon icon="briefcase" /> O Miller Wielding
+                  <FontAwesomeIcon icon="briefcase" /> O Miller Welding
                 </p>
                 <p>
                   <FontAwesomeIcon icon="envelope" /> O.millerwelding@gmail.com
