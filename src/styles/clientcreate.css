@@ -14,7 +14,7 @@
   border-radius: 0px;
 }
 .material-cost input::-webkit-input-placeholder {
-  font-size: 5%;
+  font-size: 15%;
 }
 .add-expense-btn {
   display: flex;
