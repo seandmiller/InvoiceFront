@@ -28,6 +28,7 @@
   grid-gap: 10px;
   border-bottom: 4px solid black;
   border-top: 4px solid black;
+  font-size: 70%;
 }
 
 .reciept-for-mats {
@@ -79,6 +80,7 @@
   text-align: center;
   animation: fade 3.5s ease-in-out forwards;
   font-size: 70%;
+  grid-gap: 3px;
 }
 
 .from-info {
