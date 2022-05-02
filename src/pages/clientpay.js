@@ -63,7 +63,9 @@ const Clientpayment = () => {
               </div>
               <div className="expense-wrapper">
                 {renderMaterials()}
-                <h1>Total {obj.pageData.total.totalExpense}$</h1>
+                <h1 className="total">
+                  Total {obj.pageData.total.totalExpense}$
+                </h1>
               </div>
             </div>
             <div>{obj.pageData.notes}</div>
