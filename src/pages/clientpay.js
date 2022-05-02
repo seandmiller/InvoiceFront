@@ -20,8 +20,8 @@ const Clientpayment = () => {
     const materials = obj.pageData.services.map((item, index) => {
       return (
         <div key={index} className="reciept-for-mats-pay">
-          <div>{item.service}</div> <div>{item.price}$ </div>
-          <div>{item.qty}</div>
+          <h2>{item.service}</h2> <h2>{item.price}$ </h2>
+          <h2>{item.qty}</h2>
         </div>
       );
     });
@@ -38,19 +38,19 @@ const Clientpayment = () => {
           <div className="invoice-details">
             <div className="invoice-detail">
               <div className="invoice-date">
-                <h4>Invoice Date </h4>
+                <h2>Invoice Date </h2>
                 <p>{obj.pageData.date}</p>
               </div>
               <div className="from-info-pay">
-                <h4>Invoice From</h4>
+                <h2>Invoice From</h2>
                 <div className="from-data-pay">
                   <FontAwesomeIcon icon="briefcase" />
-                  <p>O Miller Wielding</p>
+                  <h2>O Miller Wielding</h2>
                   <FontAwesomeIcon icon="envelope" />
-                  <p>O.millerwelding@gmail.com</p>
+                  <h2>O.millerwelding@gmail.com</h2>
                   <FontAwesomeIcon icon="phone" />
 
-                  <p>(510)-472-4094</p>
+                  <h2>(510)-472-4094</h2>
                 </div>
               </div>
             </div>
@@ -59,20 +59,19 @@ const Clientpayment = () => {
               <h3>Invoice Service Items</h3>
 
               <div className="client-pay-service-wrapper">
-                <div>Service/Material</div> <div>Price</div> <div>Quantity</div>
+                <h1>Service/Material</h1> <h1>Price</h1> <h1>Quantity</h1>
               </div>
               <div className="expense-wrapper">
-                {renderMaterials()}{" "}
-                <h5>Subtotal {obj.pageData.total.subTotal}$ </h5>
-                <h5>Tax Rate 8% {obj.pageData.total.tax}$</h5>
-                <h4>Total {obj.pageData.total.totalExpense}$</h4>
+                {renderMaterials()}
+                <h1>Total {obj.pageData.total.totalExpense}$</h1>
               </div>
             </div>
+            <div>{obj.pageData.notes}</div>
           </div>
         </div>
       </div>
       <div className="invoice-to">
-        <h6>Invoice to </h6>
+        <h2>Invoice to </h2>
         <div className="invoice-to-info">
           {obj.pageData.recipientData.name}
           <FontAwesomeIcon icon="person" />

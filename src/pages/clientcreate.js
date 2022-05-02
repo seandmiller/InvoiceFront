@@ -39,8 +39,8 @@ export default class App extends React.Component {
     const materials = this.state.serviceToPurchase.map((item, index) => {
       return (
         <div key={index} className="reciept-for-mats">
-          <div>{item.service.replace(/_/g, " ")}</div> <div>{item.price}$ </div>
-          <div>{item.qty}</div>{" "}
+          <h5>{item.service.replace(/_/g, " ")}</h5> <h5>{item.price}$ </h5>
+          <h5>{item.qty}</h5>{" "}
           <button
             style={{
               backgroundColor: "transparent",
@@ -84,10 +84,12 @@ export default class App extends React.Component {
     const recipientEmail = document.getElementById("Recipient");
     const recipientName = document.getElementById("Name");
     const recipientBilling = document.getElementById("Billing-Address");
+    const notesData = document.getElementById("notes");
     const reciObj = {
       name: recipientName.value.replace(/ /g, "_").toUpperCase(),
       email: recipientEmail.value,
       billing: recipientBilling.value.replace(/ /g, "_").toUpperCase(),
+      notes: notesData.value.replace(/ /g, "_"),
     };
 
     this.setState({
@@ -103,9 +105,7 @@ export default class App extends React.Component {
         recipientData: this.state.recipient,
         services: this.state.serviceToPurchase,
         total: {
-          tax: (totalExpense * 0.08).toFixed(2),
-          subTotal: totalExpense.toFixed(2),
-          totalExpense: (totalExpense * 0.08 + totalExpense).toFixed(2),
+          totalExpense: totalExpense.toFixed(2),
         },
         date: new Date().toDateString().replace(/ /g, "-"),
       },
@@ -145,12 +145,7 @@ export default class App extends React.Component {
         <h2>Invoice Details</h2>
         <div className="invoice-details">
           <div className="invoice-detail">
-            <div className="invoice-date">
-              <h4>Invoice Date </h4>
-              <p>{this.state.date.toDateString()}</p>
-            </div>
             <div className="from-info">
-              <h4>Invoice From</h4>
               <div className="from-data">
                 <p>
                   <FontAwesomeIcon icon="briefcase" /> O Miller Welding
@@ -162,6 +157,10 @@ export default class App extends React.Component {
                   <FontAwesomeIcon icon="phone" /> (510)-472-4094
                 </p>
               </div>
+            </div>
+            <div className="invoice-date">
+              <h2>Invoice Date </h2>
+              <p>{this.state.date.toDateString()}</p>
             </div>
           </div>
 
@@ -208,30 +207,35 @@ export default class App extends React.Component {
               </div>
             </div>
             <div className="service-wrapper">
-              <div>Service/Material</div> <div>Price</div> <div>quantity</div>
+              <h2>Service/Material</h2> <h2>Price</h2> <h2>Quantity</h2>
+              <h2>Delete</h2>
             </div>
             <div className="expense-wrapper">
-              {this.renderMaterials()} <h5> Subtotal {totalExpense}$ </h5>
-              <h5>Tax 8% {(totalExpense * 0.08).toFixed(2)}$ </h5>
-              <h4>Total {(totalExpense * 0.08 + totalExpense).toFixed(2)}$ </h4>
+              {this.renderMaterials()}
+
+              <h1 className="total">Total {totalExpense.toFixed(2)}$ </h1>
             </div>
 
             <div className="add-expense-btn">
               <button onClick={this.addMatItems}>Add Expense</button>
             </div>
           </div>
+          <div className="textarea-wrapper">
+            <h2>Notes</h2>
+            <textarea id="notes" styles="width: 75%; height: 25%;" />
+          </div>
         </div>
 
         {this.state.recipient ? (
           <div className="recipient-wrapper">
             <div>
-              <p>
+              <h5>
                 Recipient: {this.state.recipient["name"].replace(/_/g, " ")}{" "}
-              </p>
-              <p>
+              </h5>
+              <h5>
                 Address: {this.state.recipient["billing"].replace(/_/g, " ")}
-              </p>
-              <p> Email: {this.state.recipient["email"]} </p>
+              </h5>
+              <h5> Email: {this.state.recipient["email"]} </h5>
             </div>
             <button
               className="mistake-btn"
