@@ -8,7 +8,7 @@ const Clientpayment = () => {
   const params = useParams();
 
   const obj = JSON.parse(params.data);
-  console.log(obj);
+
   obj.pageData.recipientData.name = obj.pageData.recipientData.name.replace(
     /_/g,
     " "
@@ -66,9 +66,9 @@ const Clientpayment = () => {
                 <h1 className="total">
                   Total {obj.pageData.total.totalExpense}$
                 </h1>
+                <div>{obj.pageData.notes}</div>
               </div>
             </div>
-            <div>{obj.pageData.notes}</div>
           </div>
         </div>
       </div>

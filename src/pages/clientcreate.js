@@ -112,18 +112,7 @@ export default class App extends React.Component {
       },
     };
 
-    //"https://invoiceappnodejs.herokuapp.com/send_mail"
-    // fetch("http://localhost:8282/send_mail", {
-    //   method: "POST", // *GET, POST, PUT, DELETE, etc.
-    //   mode: "no-cors",
-    //   cache: "no-cache",
-    //   credentials: "same-origin", //
-    //   headers: {
-    //     Accept: "application/json",
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(mailBody),
-    // })
+    console.log(mailBody.pageData.notes);
     axios
       .post("https://invoiceappnodejs.herokuapp.com/send_mail", mailBody)
       .then((response) => {
