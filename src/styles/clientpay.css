@@ -40,6 +40,7 @@
   width: 90%;
   animation: fade 2.7s ease-in-out forwards;
   margin: auto;
+  margin-top: 10px;
 }
 
 .from-data-pay {
