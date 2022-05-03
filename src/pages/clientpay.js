@@ -75,15 +75,16 @@ const Clientpayment = () => {
       <div className="invoice-to">
         <h2>Invoice to </h2>
         <div className="invoice-to-info">
-          {obj.pageData.recipientData.name}
+          <p>{obj.pageData.recipientData.name} </p>
           <FontAwesomeIcon icon="person" />
         </div>
         <div className="invoice-to-info">
-          {obj.pageData.recipientData.billing}
+          <p>{obj.pageData.recipientData.billing} </p>
           <FontAwesomeIcon icon="location" />
         </div>
         <div className="invoice-to-info">
-          {obj.pageData.recipientData.email} <FontAwesomeIcon icon="envelope" />
+          <p> {obj.pageData.recipientData.email}</p>{" "}
+          <FontAwesomeIcon icon="envelope" />
         </div>
       </div>
     </div>
