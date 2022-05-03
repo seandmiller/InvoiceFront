@@ -84,12 +84,11 @@ export default class App extends React.Component {
     const recipientEmail = document.getElementById("Recipient");
     const recipientName = document.getElementById("Name");
     const recipientBilling = document.getElementById("Billing-Address");
-    const notesData = document.getElementById("notes");
+
     const reciObj = {
       name: recipientName.value.replace(/ /g, "_").toUpperCase(),
       email: recipientEmail.value,
       billing: recipientBilling.value.replace(/ /g, "_").toUpperCase(),
-      notes: notesData.value.replace(/ /g, "_"),
     };
 
     this.setState({
@@ -99,6 +98,7 @@ export default class App extends React.Component {
 
   handleEmail = () => {
     let totalExpense = this.subTotal();
+    const notesData = document.getElementById("notes");
     const mailBody = {
       mailTo: this.state.recipient["email"],
       pageData: {
@@ -107,12 +107,11 @@ export default class App extends React.Component {
         total: {
           totalExpense: totalExpense.toFixed(2),
         },
+        notes: notesData.value.replace(/ /g, "_"),
         date: new Date().toDateString().replace(/ /g, "-"),
       },
     };
-    const headers = {
-      "Content-Type": "application/json",
-    };
+
     //"https://invoiceappnodejs.herokuapp.com/send_mail"
     // fetch("http://localhost:8282/send_mail", {
     //   method: "POST", // *GET, POST, PUT, DELETE, etc.
