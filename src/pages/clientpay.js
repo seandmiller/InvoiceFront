@@ -15,6 +15,7 @@ const Clientpayment = () => {
   );
   obj.pageData.recipientData.billing =
     obj.pageData.recipientData.billing.replace(/_/g, " ");
+  obj.pageData.notes = obj.pageData.notes.replace(/_/, " ");
 
   const renderMaterials = () => {
     const materials = obj.pageData.services.map((item, index) => {

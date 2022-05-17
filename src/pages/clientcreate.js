@@ -112,7 +112,7 @@ export default class App extends React.Component {
       },
     };
 
-    console.log(mailBody.pageData.notes);
+    
     axios
       .post("https://invoiceappnodejs.herokuapp.com/send_mail", mailBody)
       .then((response) => {
